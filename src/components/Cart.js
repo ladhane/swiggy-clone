@@ -10,8 +10,7 @@ const Cart = () => {
     
   return !cartItems ? <Shimmer/> : (
     <div>
-       {cartItems.restaurantName}
-       {cartItems.length}
+       {cartItems[0].item.restaurantName}
        {cartItems && cartItems.map((item)=> <h1 key={item}>{item.item.name} - {item.quantity}</h1>)}
     </div>
   )
