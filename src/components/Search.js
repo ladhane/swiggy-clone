@@ -26,7 +26,7 @@ const Search = () => {
 
   const searchSuggestions = async () => {
     const data = await fetch(
-      `https://proxy.com/https://www.swiggy.com/dapi/restaurants/search/suggest?lat=18.655381&lng=73.761024&str=${searchText}&trackingId=null`
+      `https://corsproxy.io/?https://www.swiggy.com/dapi/restaurants/search/suggest?lat=18.655381&lng=73.761024&str=${searchText}&trackingId=null`
     );
     const data2 = await data.json();
 
