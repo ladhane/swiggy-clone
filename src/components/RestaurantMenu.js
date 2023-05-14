@@ -24,7 +24,9 @@ const RestaurantMenu = () => {
     );
     const restaurant = await data.json();
     const data2 =
-      restaurant.data.cards[2].groupedCard.cardGroupMap.REGULAR.cards;
+      restaurant.data?.cards?.find((card) => card.groupedCard)?.groupedCard
+        ?.cardGroupMap?.REGULAR?.cards || [];
+
     const cardsWithTitle = data2
       .filter((card) => card.card.card.title)
       .map((card) => card.card.card);
@@ -119,7 +121,7 @@ const RestaurantMenu = () => {
       {cartItems.length > 0 && (
         <div className="bg-green-700 text-xl px-6 text-white text-center fixed inset-x-0 lg:inset-x-96 bottom-0 rounded-md  border-b-4 mx-auto">
           <Link to="/cart">
-          <h1 className="m-3">Your cart has - {count} items</h1>
+            <h1 className="m-3">Your cart has - {count} items</h1>
           </Link>
         </div>
       )}

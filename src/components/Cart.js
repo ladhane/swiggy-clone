@@ -31,7 +31,7 @@ const Cart = () => {
       {toastMsg && (
         <div className="flex max-w-xl border-spacing-x-64 border-gray-600 shadow-xl shadow-gray-600 items-center rounded-lg mx-auto mt-5 bg-green-100">
         <FontAwesomeIcon className="p-5" icon={faCheckCircle} size="2xl" style={{color: "#03a50e",}} />
-        <h1 className="p-3 m-3 uppercase font-extrabold ml-36">{toastMsg}</h1>  
+        <h1 className="p-3 m-3 uppercase font-extrabold mx-auto">{toastMsg}</h1>  
         </div>
       )}
       <div className="border-1 border-gray-500 shadow-md mt-3 max-w-sm p-5 items-center mx-auto md:max-w-3xl">

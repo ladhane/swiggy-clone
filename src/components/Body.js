@@ -65,7 +65,7 @@ const Body = () => {
   return allRestaurants.length === 0 ? (
     <Shimmer numberOfCards={12} />
   ) : (
-    <div className="px-16 xl:px-64 m-4">
+    <div className="px-16 2xl:px-60 mt-4 2xl:m-16">
       <div className="flex justify-between h-12 items-center  border-b-2">
         <h1 className="font-bold text-lg">
           {totalOpenRestaurants} Restaurants
@@ -122,11 +122,12 @@ const Body = () => {
           </li>
         </ul>
       </div>
-      <div className="flex flex-wrap max-w-7xl">
+      <div className="flex flex-wrap ">
         {allRestaurants &&
           allRestaurants.map((restaurant) => {
             return (
               <Link
+              className="flex md:1/2 lg:w-1/4 max-w-xs"
                 to={"/restaurant/" + restaurant.data.id}
                 key={restaurant?.data?.id}
               >
