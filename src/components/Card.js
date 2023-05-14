@@ -16,7 +16,7 @@ const Card = (data) => {
       <img src={IMAGE_ID + cloudinaryImageId} alt="restaurant"></img>
       <h1 className="pt-2 font-semibold">{name}</h1>
       <h2 className="pt-2 text-gray-500 text-sm">{cuisines?.join(", ")}</h2>
-      <div className="py-4 flex justify-between items-center border-b-2 text-gray-500 text-sm">
+      <div className="py-4 flex justify-between items-center border-b-2 text-gray-500 text-sm md:text-xs">
         {avgRating && avgRating >= 4 ? (
           <div className="flex p-1 bg-green-700 text-xs text-white items-center">
             <svg
@@ -55,9 +55,9 @@ const Card = (data) => {
           </div>
         )}
         <div>.</div>
-        <h1>{deliveryTime}</h1>
+        <h1>{deliveryTime}mins</h1>
         <div>.</div>
-        <h1>{costForTwoString}</h1>
+        <h1 className="md:hidden xl:block">{costForTwoString}</h1>
       </div>
       <h2 className="pt-2 text-amber-900 text-sm font-bold text-center">{aggregatedDiscountInfo?.header}</h2>
     </div>
