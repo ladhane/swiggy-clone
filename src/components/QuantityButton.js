@@ -16,6 +16,7 @@ const QuantityButton = ({ data, restInfo }) => {
         restaurantName: restInfo,
       };
     }
+    console.log(newItem,"newItem");
     dispatch(addItem({ item: newItem, quantity: quantity }));
   };
 
@@ -25,12 +26,14 @@ const QuantityButton = ({ data, restInfo }) => {
   return cartItems.length <= 0 || index < 0 ? (
     <button
       className="font-semibold text-lg border-4 border-green-600 w-28 ml-2"
-      onClick={() => addItemsToCart(data, 1)}
+      onClick={() => {console.log(data,"dTd");addItemsToCart(data, 1)}}
     >
       Add
+      {console.log(cartItems.length,index,"if of ternary")}
     </button>
   ) : (
     <div className="flex">
+      {console.log("else of ternary")}
       <button
         className="font-semibold text-lg border-4 border-green-600 px-3 ml-2"
         onClick={() => reduceItemsToCart(data, 1)}

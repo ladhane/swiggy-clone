@@ -13,7 +13,7 @@ const MenuCategory = ({ data, restInfo }) => {
       {data.itemCards?.map((itemCard) => {
         return (
           <MenuItem
-            key={itemCard?.card?.info.id}
+            key={itemCard?.card?.info.name}
             data={itemCard?.card?.info}
             restInfo={restInfo}
           ></MenuItem>

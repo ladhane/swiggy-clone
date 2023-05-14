@@ -28,7 +28,7 @@ const CartCard = ({ data }) => {
           <h1 className="p-2">{data.item.name}</h1>
         </div>
         <div className="flex justify-between h-8">
-        <h1 className=" mr-8 md:mr-16"> {data.item.price / 100}</h1>
+        <h1 className=" mr-8 md:mr-16"> {data.item.price|| data.item.defaultPrice / 100}</h1>
           <div className="flex">
             <button
               className="font-semibold text-sm border border-green-600 px-3 ml-2"

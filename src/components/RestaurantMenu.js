@@ -108,7 +108,7 @@ const RestaurantMenu = () => {
         <h1 className="font-extrabold">{restaurantInfo.costForTwoMessage}</h1>
       </div>
       {restaurantMenu && (
-        <div>
+        <div className="mb-8">
           {restaurantMenu.map((category, index) => (
             <MenuCategory
               key={index}
