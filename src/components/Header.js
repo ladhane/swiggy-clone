@@ -12,16 +12,16 @@ const Header = () => {
 
 
   return (
-    <div className="h-24 flex justify-between items-center shadow-md">
-      <div className="flex items-center pl-64">
+    <div className="h-24 justify-between items-center shadow-md flex">
+      <div className="flex items-center md:pl-64">
       <a href="/"><img className="h-16 px-2 cursor-pointer" src={logo} alt="logo"></img></a>
         <p className="font-bold uppercase underline px-2">
           Home
         </p>
         <span className="px-2 text-gray-500">Address</span>
       </div>
-      <ul className="list-none flex py-8 pr-64">
-        <li className="px-2">Search</li>
+      <ul className="hidden list-none md:flex py-8 pr-64">
+        <li className="px-2"><Link to="/search">Search</Link></li>
         <li className="px-2">Offers</li>
         <li className="px-2">Help</li>
         <li className="px-2">Profile</li>

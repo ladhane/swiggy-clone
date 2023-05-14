@@ -11,9 +11,8 @@ const Card = (data) => {
     cuisines,
     aggregatedDiscountInfo,
   } = data;
-  // console.log(data,"---->data that i get in card");
   return (
-    <div className="w-[17rem] hover:shadow-2xl p-4 m-4">
+    <div className=" min-w-fit max-w-xs md:w-[17rem] hover:shadow-2xl p-4 m-4">
       <img src={IMAGE_ID + cloudinaryImageId} alt="restaurant"></img>
       <h1 className="pt-2 font-semibold">{name}</h1>
       <h2 className="pt-2 text-gray-500 text-sm">{cuisines?.join(", ")}</h2>

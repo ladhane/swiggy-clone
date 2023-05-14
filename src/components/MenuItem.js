@@ -1,33 +1,12 @@
-import React, { useState } from "react";
+import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faIndianRupeeSign, faStar } from "@fortawesome/free-solid-svg-icons";
-import { useDispatch, useSelector } from "react-redux";
-import { addItem, reduceItem } from "../utils/CartSlice";
-import useQuantity from "../utils/useQuantity";
+// import { useDispatch, useSelector } from "react-redux";
+// import { addItem, reduceItem } from "../utils/CartSlice";
+// import useQuantity from "../utils/useQuantity";
+import QuantityButton from "./QuantityButton";
 
 const MenuItem = ({ data,restInfo }) => {
-  //console.log(data, "data2");
-
-  const [showAddBtn, setShowAddBtn] = useState(true);
-
-  const dispatch = useDispatch();
-  const cartItems = useSelector((store) => store.cart.items);
-  const index = useQuantity(cartItems,data.name);
-
-  const addItemsToCart = (data, quantity) => {
-    console.log(data,quantity);
-    const newItem = {
-      ...data,
-      restaurantName: restInfo
-    };
-    data.restaurantName = restInfo
-    setShowAddBtn(false);
-    dispatch(addItem({ item: newItem, quantity: quantity }));
-  };
-
-  const reduceItemsToCart = (data,quantity) => {
-    dispatch(reduceItem({ item: data, quantity: quantity }));
-  };
   return (
     <>
       <div className="my-4 py-4 border-gray-600 flex justify-between">
@@ -101,32 +80,7 @@ const MenuItem = ({ data,restInfo }) => {
               ></img>
             </div>
           )}
-          {/* {<QuantityButton data={data.name}/>} */}
-          {showAddBtn ? (
-            <button
-              className="font-semibold text-lg border-4 border-green-600 w-28 ml-2"
-              onClick={() => addItemsToCart(data, 1)}
-            >
-              Add
-            </button>
-          ) : (
-            <div className="flex">
-              <button
-                className="font-semibold text-lg border-4 border-green-600 px-3 ml-2"
-                onClick={() => reduceItemsToCart(data,1)}
-              >
-                -
-              </button> 
-              {console.log(cartItems,"cartIyte,")}
-              <h1 className="px-3 border-y-4 border-green-600">{index > -1 ? cartItems[index].quantity : 0}</h1>
-              <button
-                className="font-semibold text-lg px-3 border-4 border-green-600"
-                onClick={() => addItemsToCart(data,1)}
-              >
-                +
-              </button>
-            </div>
-          )}
+          <QuantityButton data={data} restInfo={restInfo}/>
         </div>
       </div>
       <div className="border-b-2"></div>

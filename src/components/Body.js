@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import Card from "./Card";
-import Shimmer from "./Shimmer";
-import ShimmerCard from "./ShimmerCard";
+import Shimmer from "./Shimmer/Shimmer";
+import ShimmerCard from "./Shimmer/ShimmerCard";
 import { Link } from "react-router-dom";
 
 const Body = () => {
@@ -27,16 +27,14 @@ const Body = () => {
       );
       const modifiedData = data2?.data?.data?.cards;
       setTotalOpenRestaurants(data2?.data?.data?.totalOpenRestaurants);
-      //console.log(modifiedData, "modified data");
       setAllRestaurants(modifiedData);
     } else {
-      //fetch restaurant data for infinite scrolling
+      //api call is diff on infinite scroll
       let FETCH_MORE_RESTAURANT_DATA_URL = `https://www.swiggy.com/dapi/restaurants/list/v5?lat=18.655381&lng=73.761024&offset=${offset}&sortBy=${sortBy}&pageType=SEE_ALL&page_type=DESKTOP_SEE_ALL_LISTING`;
       const data = await fetch(FETCH_MORE_RESTAURANT_DATA_URL);
       const jsonData = await data.json();
       const data2 = jsonData?.data?.cards;
       const modifiedData = data2.map((card) => card.data);
-      //console.log(modifiedData, "new modifieddata");
       setAllRestaurants((prev) => prev.concat(modifiedData));
     }
     setLoading(false);
@@ -67,12 +65,12 @@ const Body = () => {
   return allRestaurants.length === 0 ? (
     <Shimmer numberOfCards={12} />
   ) : (
-    <div className="px-64 m-4">
+    <div className="px-16 xl:px-64 m-4">
       <div className="flex justify-between h-12 items-center  border-b-2">
         <h1 className="font-bold text-lg">
           {totalOpenRestaurants} Restaurants
         </h1>
-        <ul className="flex justify-between text-gray-500">
+        <ul className=" hidden md:flex justify-between text-gray-500">
           <li
             className={`px-3 cursor-pointer ${
               sortBy === "RELEVANCE"
@@ -124,7 +122,7 @@ const Body = () => {
           </li>
         </ul>
       </div>
-      <div className="flex flex-wrap">
+      <div className="flex flex-wrap max-w-7xl">
         {allRestaurants &&
           allRestaurants.map((restaurant) => {
             return (

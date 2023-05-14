@@ -6,6 +6,7 @@ import RestaurantMenu from "./RestaurantMenu";
 import { Provider } from "react-redux";
 import store from "../utils/store";
 import Cart from "./Cart";
+import Search from "./Search";
 
 const AppLayout = () => {
   return (
@@ -33,6 +34,10 @@ export const router = createBrowserRouter([
       {
         path:"/cart",
         element: <Cart/>
+      },
+      {
+        path:"/search",
+        element: <Search/>
       }
     ],
   },

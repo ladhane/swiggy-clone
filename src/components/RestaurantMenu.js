@@ -1,13 +1,16 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import ShimmerCard from "./ShimmerCard";
 import MenuCategory from "./MenuCategory";
+import { useSelector } from "react-redux";
+import MenuShimmer from "./Shimmer/MenuShimmer";
 
 const RestaurantMenu = () => {
   const { id } = useParams();
 
   const [restaurantInfo, setRestaurantInfo] = useState();
   const [restaurantMenu, setRestaurantMenu] = useState([]);
+  const cartItems = useSelector((store) => store.cart.items);
+  const count = cartItems.reduce((total, item) => total + item.quantity, 0);
   //   const [categoryType, setCategoryType] = useState([]);
 
   useEffect(() => {
@@ -20,24 +23,18 @@ const RestaurantMenu = () => {
       `https://www.swiggy.com/dapi/menu/pl?page-type=REGULAR_MENU&complete-menu=true&lat=18.655381&lng=73.761024&restaurantId=${id}&submitAction=ENTER`
     );
     const restaurant = await data.json();
-    // console.log(restaurant.data.cards[0].card.card.info, "restaurantInfo");
     const data2 =
       restaurant.data.cards[2].groupedCard.cardGroupMap.REGULAR.cards;
-    //console.log(data2, "data2");
     const cardsWithTitle = data2
       .filter((card) => card.card.card.title)
       .map((card) => card.card.card);
-    // console.log(cardsWithTitle, "cardWithTitle");
-    // const cardCategories = cardsWithTitle.map((c) => c.title);
-    // console.log(cardCategories, "cardCategories");
-    // setCategoryType(cardCategories);
     setRestaurantInfo(restaurant.data.cards[0].card.card.info);
     setRestaurantMenu(cardsWithTitle);
   };
   return !restaurantInfo ? (
-    <ShimmerCard />
+    <MenuShimmer numberOfCards={10}/>
   ) : (
-    <div className="max-w-4xl mt-2 mx-auto">
+    <div className="max-w-4xl mt-2 mx-auto px-6">
       <div className=" flex justify-between mb-4">
         <div>
           <h1 className="font-extrabold text-2xl my-2">
@@ -73,7 +70,9 @@ const RestaurantMenu = () => {
           </h1>
         </div>
       </div>
-      <h1 className=" text-xs text-gray-500  pb-4 border-dashed border-b-2">{restaurantInfo.feeDetails.message}</h1>
+      <h1 className=" text-xs text-gray-500  pb-4 border-dashed border-b-2">
+        {restaurantInfo.feeDetails.message}
+      </h1>
       <div className="flex items-center mt-4 pb-4 border-b-2">
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -109,8 +108,21 @@ const RestaurantMenu = () => {
       {restaurantMenu && (
         <div>
           {restaurantMenu.map((category, index) => (
-            <MenuCategory key={index} data={category} restInfo={restaurantInfo.name}/>
+            <MenuCategory
+              key={index}
+              data={category}
+              restInfo={restaurantInfo.name}
+            />
           ))}
+        </div>
+      )}
+      {cartItems.length > 0 && (
+        <div
+          className="bg-green-700 text-xl px-6 text-white text-center fixed inset-x-0 lg:inset-x-96 bottom-0 rounded-md  border-b-4 mx-auto"
+        >
+          {/* <FontAwesomeIcon className="p-5" icon={faCheckCircle} size="2xl" style={{color: "#03a50e",}} /> */}
+          <h1 className="m-3">Your cart has - {count} items</h1>
+          {/* <FontAwesomeIcon className="p-5" icon={faXmarkCircle} size="xl" style={{color: "#5b5d62",}} onClick={()=> setToastMsg()} /> */}
         </div>
       )}
     </div>
