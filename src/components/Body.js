@@ -19,7 +19,7 @@ const Body = () => {
   const fetchRestaurantData = async () => {
     if (offset === 0) {
       const data = await fetch(
-        `https://www.swiggy.com/dapi/restaurants/list/v5?lat=18.655381&lng=73.761024&sortBy=${sortBy}&page_type=DESKTOP_WEB_LISTING`
+        `https://proxy.com/https://www.swiggy.com/dapi/restaurants/list/v5?lat=18.655381&lng=73.761024&sortBy=${sortBy}&page_type=DESKTOP_WEB_LISTING`
       );
       const jsonData = await data.json();
       const data2 = jsonData?.data?.cards?.find(
@@ -30,7 +30,7 @@ const Body = () => {
       setAllRestaurants(modifiedData);
     } else {
       //api call is diff on infinite scroll
-      let FETCH_MORE_RESTAURANT_DATA_URL = `https://www.swiggy.com/dapi/restaurants/list/v5?lat=18.655381&lng=73.761024&offset=${offset}&sortBy=${sortBy}&pageType=SEE_ALL&page_type=DESKTOP_SEE_ALL_LISTING`;
+      let FETCH_MORE_RESTAURANT_DATA_URL = `https://proxy.com/https://www.swiggy.com/dapi/restaurants/list/v5?lat=18.655381&lng=73.761024&offset=${offset}&sortBy=${sortBy}&pageType=SEE_ALL&page_type=DESKTOP_SEE_ALL_LISTING`;
       const data = await fetch(FETCH_MORE_RESTAURANT_DATA_URL);
       const jsonData = await data.json();
       const data2 = jsonData?.data?.cards;

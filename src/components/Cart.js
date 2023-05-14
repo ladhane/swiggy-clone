@@ -51,13 +51,13 @@ const Cart = () => {
             </div>
             { !isOrderPlaced && <div className="flex justify-around">
               <button
-                className="border-2 border-orange-500 text-orange-500 hover:bg-orange-500 hover:text-white font-semibold uppercase p-3 px-28"
+                className="border-2 border-orange-500 text-orange-500 hover:bg-orange-500 hover:text-white font-semibold uppercase p-3 md:px-28"
                 onClick={() => addToastMessage()}
               >
                 Place Order
               </button>
               <button
-                className="border-2 border-orange-500 text-orange-500 hover:bg-orange-500 hover:text-white font-semibold uppercase p-3 px-28"
+                className="border-2 border-orange-500 text-orange-500 hover:bg-orange-500 hover:text-white font-semibold uppercase p-3 md:px-28"
                 onClick={() => handleClearCart()}
               >
                 ClearCart

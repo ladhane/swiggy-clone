@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import MenuCategory from "./MenuCategory";
 import { useSelector } from "react-redux";
 import MenuShimmer from "./Shimmer/MenuShimmer";
@@ -20,7 +20,7 @@ const RestaurantMenu = () => {
 
   const getRestaurantMenu = async () => {
     const data = await fetch(
-      `https://www.swiggy.com/dapi/menu/pl?page-type=REGULAR_MENU&complete-menu=true&lat=18.655381&lng=73.761024&restaurantId=${id}&submitAction=ENTER`
+      `https://proxy.com/https://www.swiggy.com/dapi/menu/pl?page-type=REGULAR_MENU&complete-menu=true&lat=18.655381&lng=73.761024&restaurantId=${id}&submitAction=ENTER`
     );
     const restaurant = await data.json();
     const data2 =
@@ -32,7 +32,7 @@ const RestaurantMenu = () => {
     setRestaurantMenu(cardsWithTitle);
   };
   return !restaurantInfo ? (
-    <MenuShimmer numberOfCards={10}/>
+    <MenuShimmer numberOfCards={10} />
   ) : (
     <div className="max-w-4xl mt-2 mx-auto px-6">
       <div className=" flex justify-between mb-4">
@@ -117,12 +117,10 @@ const RestaurantMenu = () => {
         </div>
       )}
       {cartItems.length > 0 && (
-        <div
-          className="bg-green-700 text-xl px-6 text-white text-center fixed inset-x-0 lg:inset-x-96 bottom-0 rounded-md  border-b-4 mx-auto"
-        >
-          {/* <FontAwesomeIcon className="p-5" icon={faCheckCircle} size="2xl" style={{color: "#03a50e",}} /> */}
+        <div className="bg-green-700 text-xl px-6 text-white text-center fixed inset-x-0 lg:inset-x-96 bottom-0 rounded-md  border-b-4 mx-auto">
+          <Link to="/cart">
           <h1 className="m-3">Your cart has - {count} items</h1>
-          {/* <FontAwesomeIcon className="p-5" icon={faXmarkCircle} size="xl" style={{color: "#5b5d62",}} onClick={()=> setToastMsg()} /> */}
+          </Link>
         </div>
       )}
     </div>
