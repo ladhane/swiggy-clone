@@ -3,7 +3,6 @@ import { Link, useParams } from "react-router-dom";
 import MenuCategory from "./MenuCategory";
 import { useSelector } from "react-redux";
 import MenuShimmer from "./Shimmer/MenuShimmer";
-import Footer from "./Footer";
 
 const RestaurantMenu = () => {
   const { id } = useParams();
@@ -37,7 +36,6 @@ const RestaurantMenu = () => {
   return !restaurantInfo ? (
     <MenuShimmer numberOfCards={10} />
   ) : (
-    <>
     <div className="max-w-4xl mt-2 mx-auto px-6">
       <div className=" flex justify-between mb-4">
         <div>
@@ -121,15 +119,13 @@ const RestaurantMenu = () => {
         </div>
       )}
       {cartItems.length > 0 && (
-        <div className="bg-green-700 text-xl px-6 text-white text-center fixed inset-x-0 lg:inset-x-96 bottom-0 rounded-md  border-b-4 mx-auto">
+        <div className="bg-green-700 text-xl px-6 text-white text-center fixed inset-x-0 lg:inset-x-96 bottom-12 rounded-md  border-b-4 mx-auto">
           <Link to="/cart">
             <h1 className="m-3">Your cart has - {count} items</h1>
           </Link>
         </div>
       )}
     </div>
-    <Footer/>
-    </>
   );
 };
 

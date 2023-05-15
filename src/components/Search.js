@@ -53,7 +53,7 @@ const Search = () => {
         </button>
       </div>
       {suggestedRestaurants ? (
-        <div className="col-start-2 col-span-4 w-[45rem]">
+        <div className="col-start-2 col-span-4 md:w-[45rem]">
           {suggestedRestaurants.map((index) => (
             <div className=" p-5 flex my-5 hover:bg-gray-200" key={index.text}>
               <div>

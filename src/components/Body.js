@@ -3,7 +3,7 @@ import Card from "./Card";
 import Shimmer from "./Shimmer/Shimmer";
 import ShimmerCard from "./Shimmer/ShimmerCard";
 import { Link } from "react-router-dom";
-import Footer from "./Footer";
+import useOnline from "../utils/useOnline";
 
 const Body = () => {
   const [allRestaurants, setAllRestaurants] = useState([]);
@@ -11,6 +11,7 @@ const Body = () => {
   const [sortBy, setSortBy] = useState("RELEVANCE");
   const [offset, setOffset] = useState(0);
   const [loading, setLoading] = useState(true);
+  const isOnline = useOnline();
 
   useEffect(() => {
     fetchRestaurantData();
@@ -62,6 +63,12 @@ const Body = () => {
     setOffset(0);
     setSortBy(val);
   }
+
+  if(!isOnline){
+    return <h1 className="text-center m-5 p-5" > Looks like you are offline. Please connect to internet!</h1>
+  }
+
+  if (!allRestaurants) return null;
 
   return allRestaurants.length === 0 ? (
     <Shimmer numberOfCards={12} />
@@ -140,7 +147,6 @@ const Body = () => {
         {loading && <ShimmerCard />}
       </div>
     </div>
-    <Footer/>
     </>
   );
 };

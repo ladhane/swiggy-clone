@@ -1,9 +1,20 @@
 import React from "react";
 import ProfilePic from "../assets/Mayuri.jpeg";
-import Footer from "./Footer";
+
 
 const Profile = () => {
-    const skills=["React","Redux","Javascript","NodeJS","ExpressJs","MySql","GraphQL","Tailwindcss","HTML","CSS"];
+  const skills = [
+    "React",
+    "Redux",
+    "Javascript",
+    "NodeJS",
+    "ExpressJs",
+    "MySql",
+    "GraphQL",
+    "Tailwindcss",
+    "HTML",
+    "CSS",
+  ];
   return (
     <>
       <div className="grid grid-cols-6">
@@ -29,10 +40,17 @@ const Profile = () => {
         <div className="col-start-2 col-span-4 p-4 pt-0 border-b-2">
           <h1 className="text-2xl font-extrabold my-4">Skills</h1>
           <div className="flex flex-wrap">
-          {skills.map((skill)=><h1 key={skill} className="bg-cyan-600 text-white rounded-2xl w-fit px-2 m-2">{skill}</h1> )}
+            {skills.map((skill) => (
+              <h1
+                key={skill}
+                className="bg-cyan-600 text-white rounded-2xl w-fit px-2 m-2"
+              >
+                {skill}
+              </h1>
+            ))}
           </div>
-          </div>
-    </div>
+        </div>
+      </div>
       <div className="grid grid-cols-6">
         <div className="col-start-2 col-span-4 p-4 pt-0 border-b-2">
           <h1 className="text-2xl font-extrabold my-4">About</h1>
@@ -64,20 +82,38 @@ const Profile = () => {
         <div className="col-start-2 col-span-4 p-4 pt-0 border-b-2">
           <h1 className="text-2xl font-extrabold my-4">Experience</h1>
           <div className="p-4">
-          <h1 className="text-lg font-extrabold text-gray-900">Associate Software Engineer</h1>
-          <h1 className="text-sm font-semibold text-gray-900">Condé Nast Technology Labs</h1>
-          <h1 className="text-gray-500 text-sm">09/2021 - Present</h1>
-          <h1 className="text-gray-500 text-sm">Banglore,Karnataka,India</h1>
+            <h1 className="text-lg font-extrabold text-gray-900">
+              Associate Software Engineer
+            </h1>
+            <h1 className="text-sm font-semibold text-gray-900">
+              Condé Nast Technology Labs
+            </h1>
+            <h1 className="text-gray-500 text-sm">09/2021 - Present</h1>
+            <h1 className="text-gray-500 text-sm">Banglore,Karnataka,India</h1>
           </div>
           <div className="p-4">
-          <h1 className="text-lg font-extrabold text-gray-900">Intern</h1>
-          <h1 className="text-sm font-semibold text-gray-900">Raja Software Labs</h1>
-          <h1 className="text-gray-500 text-sm">02/2021 - 04/2021</h1>
-          <h1 className="text-gray-500 text-sm">Pune,Maharashtra,India</h1>
+            <h1 className="text-lg font-extrabold text-gray-900">Intern</h1>
+            <h1 className="text-sm font-semibold text-gray-900">
+              Raja Software Labs
+            </h1>
+            <h1 className="text-gray-500 text-sm">02/2021 - 04/2021</h1>
+            <h1 className="text-gray-500 text-sm">Pune,Maharashtra,India</h1>
           </div>
         </div>
       </div>
-      <Footer/>
+      <div className="grid grid-cols-6">
+        <div className="col-start-2 col-span-4 p-4 pt-0 border-b-2 mb-12">
+          <h1 className="text-2xl font-extrabold my-4"> Connect </h1>
+          <div className="inline-flex">
+          <img className="w-8" src="https://cdn-icons-png.flaticon.com/512/49/49656.png" alt="linkedin"></img>
+          <a href="https://corsproxy.io/?https://linkedin.com/in/mayuri-ladhane" className="pl-2"></a>
+          </div>
+          <div className="inline-flex">
+          <img className="w-8" src="https://cdn-icons-png.flaticon.com/512/25/25231.png" alt="linkedin"></img>
+          <a href="https://corsproxy.io/?https://linkedin.com/in/mayuri-ladhane" className="pl-2"></a>
+          </div>
+        </div>
+      </div>
     </>
   );
 };
