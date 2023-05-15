@@ -40,7 +40,7 @@ const Cart = () => {
         </h1>
         {cartItems &&
           cartItems.map((item) => {
-            count = count + (item.item.price * item.quantity) / 100;
+            count = count + ((item.item.price || item.item.defaultPrice) * item.quantity) / 100;
             return <CartCard key={item.item.id} data={item} />;
           })}
         {(count !== 0) ? (
