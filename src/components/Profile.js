@@ -102,15 +102,14 @@ const Profile = () => {
         </div>
       </div>
       <div className="grid grid-cols-6">
-        <div className="col-start-2 col-span-4 p-4 pt-0 border-b-2 mb-12">
+        <div className="col-start-2 col-span-4 p-4 pt-0 border-b-2 mb-12 md:mb-2">
           <h1 className="text-2xl font-extrabold my-4"> Connect </h1>
           <div className="inline-flex">
-          <img className="w-8" src="https://cdn-icons-png.flaticon.com/512/49/49656.png" alt="linkedin"></img>
-          <a href="https://corsproxy.io/?https://linkedin.com/in/mayuri-ladhane" className="pl-2"></a>
+
+          <a href="https://corsproxy.io/?https://linkedin.com/in/mayuri-ladhane" className="pl-2"> <img className="w-8" src="https://cdn-icons-png.flaticon.com/512/49/49656.png" alt="linkedin"/></a>
           </div>
           <div className="inline-flex">
-          <img className="w-8" src="https://cdn-icons-png.flaticon.com/512/25/25231.png" alt="linkedin"></img>
-          <a href="https://corsproxy.io/?https://linkedin.com/in/mayuri-ladhane" className="pl-2"></a>
+          <a href="https://corsproxy.io/?https://github.com/ladhane" className="pl-2">          <img className="w-8" src="https://cdn-icons-png.flaticon.com/512/25/25231.png" alt="linkedin"/></a>
           </div>
         </div>
       </div>

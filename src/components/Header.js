@@ -30,7 +30,7 @@ const Header = () => {
           <Link to="/cart">Cart- {count}</Link>
         </li>
       </ul>
-      <div className="fixed bottom-0 w-full flex justify-between bg-orange-500 text-white p-2 md:hidden">
+      <div className="fixed bottom-0 w-full font-bold flex justify-between bg-orange-500 text-white p-4 md:hidden">
       <Link to="/search">Search</Link>
       <Link to="/profile">Profile</Link>
       <Link to="/cart">Cart- {count}</Link>
