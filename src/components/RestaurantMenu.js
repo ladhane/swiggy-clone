@@ -3,6 +3,7 @@ import { Link, useParams } from "react-router-dom";
 import MenuCategory from "./MenuCategory";
 import { useSelector } from "react-redux";
 import MenuShimmer from "./Shimmer/MenuShimmer";
+import Footer from "./Footer";
 
 const RestaurantMenu = () => {
   const { id } = useParams();
@@ -36,6 +37,7 @@ const RestaurantMenu = () => {
   return !restaurantInfo ? (
     <MenuShimmer numberOfCards={10} />
   ) : (
+    <>
     <div className="max-w-4xl mt-2 mx-auto px-6">
       <div className=" flex justify-between mb-4">
         <div>
@@ -126,6 +128,8 @@ const RestaurantMenu = () => {
         </div>
       )}
     </div>
+    <Footer/>
+    </>
   );
 };
 

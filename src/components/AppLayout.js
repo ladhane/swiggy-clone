@@ -7,6 +7,7 @@ import { Provider } from "react-redux";
 import store from "../utils/store";
 import Cart from "./Cart";
 import Search from "./Search";
+import Profile from "./Profile";
 
 const AppLayout = () => {
   return (
@@ -38,6 +39,9 @@ export const router = createBrowserRouter([
       {
         path:"/search",
         element: <Search/>
+      },{
+        path:"/profile",
+        element: <Profile/>
       }
     ],
   },

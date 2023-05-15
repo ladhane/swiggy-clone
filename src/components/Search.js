@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { searchResults } from "../utils/searchSlice";
+import search from "../assets/search.jpeg"
 
 const Search = () => {
   const [searchText, setSearchText] = useState("");
@@ -43,7 +44,7 @@ const Search = () => {
       <div className="col-start-2 col-span-4 inline-flex mt-5">
         <input
           type="text"
-          className="p-3 border-2 border-gray-400 rounded-s-md w-[40rem]"
+          className="p-3 border-2 border-gray-400 rounded-s-md md:w-[40rem]"
           value={searchText}
           onChange={(e) => setSearchText(e.target.value)}
         ></input>
@@ -51,7 +52,7 @@ const Search = () => {
           Search
         </button>
       </div>
-      {suggestedRestaurants && (
+      {suggestedRestaurants ? (
         <div className="col-start-2 col-span-4 w-[45rem]">
           {suggestedRestaurants.map((index) => (
             <div className=" p-5 flex my-5 hover:bg-gray-200" key={index.text}>
@@ -69,7 +70,11 @@ const Search = () => {
             </div>
           ))}
         </div>
-      )}
+      ):(
+        <div className="col-start-2 col-span-4 inline-flex mt-5">
+          <img className="p-20" src={search} alt="try searching something"></img>
+        </div>
+                  )}
     </div>
   );
 };

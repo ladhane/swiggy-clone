@@ -3,6 +3,7 @@ import Card from "./Card";
 import Shimmer from "./Shimmer/Shimmer";
 import ShimmerCard from "./Shimmer/ShimmerCard";
 import { Link } from "react-router-dom";
+import Footer from "./Footer";
 
 const Body = () => {
   const [allRestaurants, setAllRestaurants] = useState([]);
@@ -65,6 +66,7 @@ const Body = () => {
   return allRestaurants.length === 0 ? (
     <Shimmer numberOfCards={12} />
   ) : (
+    <>
     <div className="px-16 2xl:px-60 mt-4 2xl:m-16">
       <div className="flex justify-between h-12 items-center  border-b-2">
         <h1 className="font-bold text-lg">
@@ -138,6 +140,8 @@ const Body = () => {
         {loading && <ShimmerCard />}
       </div>
     </div>
+    <Footer/>
+    </>
   );
 };
 
