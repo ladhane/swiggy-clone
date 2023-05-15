@@ -57,7 +57,7 @@ const Card = (data) => {
         <div>.</div>
         <h1>{deliveryTime}mins</h1>
         <div>.</div>
-        <h1 className="md:hidden xl:block">{costForTwoString}</h1>
+        <h1 className="xl:block">{costForTwoString}</h1>
       </div>
       <h2 className="pt-2 text-amber-900 text-sm font-bold text-center">{aggregatedDiscountInfo?.header}</h2>
     </div>

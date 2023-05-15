@@ -74,7 +74,7 @@ const Body = () => {
     <Shimmer numberOfCards={12} />
   ) : (
     <>
-    <div className="px-16 2xl:px-60 mt-4 2xl:m-16">
+    <div className="px-8 2xl:px-60 mt-4 2xl:m-16">
       <div className="flex justify-between h-12 items-center  border-b-2">
         <h1 className="font-bold text-lg">
           {totalOpenRestaurants} Restaurants
