@@ -1,70 +1,33 @@
-# Getting Started with Create React App
+# Namaste Swiggy Application 
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This is a Swiggy Clone Application built using React and Redux for state management. It includes several features such as a shimer effect, infinite scrolling, sorting of restaurants,debouncing effect,etc.The application is styled using TailwindCSS and real-time data is fetched using Swiggy API.
 
-## Available Scripts
+## Features
 
-In the project directory, you can run:
+- Shimer Effect: When data is being loaded, a shimer effect is displayed on the screen to indicate that the data is loading.
 
-### `npm start`
+- Infinite Scrolling: The application uses infinite scrolling to load more data as the user scrolls down the page. This ensures that the user always has access to new data without having to click on a button to load more.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- Sorting of Restaurants: The restaurants can be sorted based on various criteria such as relevance, rating, delivery time and price. This allows the user to find the restaurant they are looking for quickly and easily.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+- Debouncing Effect: The search bar in the application has a debouncing effect, which means that the search query is only sent to the server after the user has stopped typing for a certain amount of time. This helps to prevent unnecessary requests from being sent to the server and improves the performance of the application.
 
-### `npm test`
+## Tools Used
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- React: The application is built using React, which is a popular JavaScript library for building user interfaces.
 
-### `npm run build`
+- Redux: Redux is used for state management in the application. It provides a predictable way to manage the state of the application and makes it easy to debug and test the application.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- React Router: React Router is used for routing in the application. It allows the user to navigate between different pages in the application.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Getting Started
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+To run the application locally, follow these steps:
 
-### `npm run eject`
+1. Clone the repository to your local machine.
+2. Install the dependencies using `npm install`.
+3. Run the application using `npm start`.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+## Conclusion
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+This Swiggy Clone Application demonstrates several useful features such as infinite scrolling, sorting, and debouncing. It also showcases the power of React and Redux for building complex web applications, the convenience of using TailwindCSS for styling, and the ability to fetch real-time data using Swiggy API.
