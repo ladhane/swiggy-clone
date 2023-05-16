@@ -7,7 +7,7 @@ const Help = () => {
   useEffect(() => {
     getFAQs();
     // eslint-disable-next-line
-  }, [faqs]);
+  }, []);
 
   const getFAQs = async () => {
     const data = await fetch("https://www.swiggy.com/dapi/support/issues/faq");
