@@ -8,6 +8,7 @@ import store from "../utils/store";
 import Cart from "./Cart";
 import Search from "./Search";
 import Profile from "./Profile";
+import Help from "./Help";
 
 const AppLayout = () => {
   return (
@@ -42,6 +43,9 @@ export const router = createBrowserRouter([
       },{
         path:"/profile",
         element: <Profile/>
+      },{
+        path:"/help",
+        element: <Help/>
       }
     ],
   },

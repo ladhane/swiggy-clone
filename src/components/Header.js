@@ -22,7 +22,7 @@ const Header = () => {
           <Link to="/search">Search</Link>
         </li>
         <li className="px-2">Offers</li>
-        <li className="px-2">Help</li>
+        <li className="px-2"><Link to="/help">Help</Link></li>
         <li className="px-2 cursor-pointer">
           <Link to="/profile">Profile</Link>
         </li>
