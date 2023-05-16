@@ -10,7 +10,6 @@ const CartSlice = createSlice({
       const existingIndex = state.items.findIndex(
         (item) => item.item.name === action.payload.item.name
       );
-
       if (existingIndex !== -1) {
         state.items[existingIndex].quantity += action.payload.quantity;
       } else {
