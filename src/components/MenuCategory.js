@@ -7,9 +7,10 @@ const MenuCategory = ({ data, restInfo }) => {
     <Shimmer />
   ) : (
     <div>
+      {data.itemCards?.length > 0 && 
       <h1 className="font-extrabold text-lg my-4">
         {data.title} {data.itemCards && `(${data.itemCards?.length})`}
-      </h1>
+      </h1>}
       {data.itemCards?.map((itemCard) => {
         return (
           <MenuItem
@@ -19,10 +20,6 @@ const MenuCategory = ({ data, restInfo }) => {
           ></MenuItem>
         );
       })}
-      {data.categories &&
-        data.categories.map((category) => (
-          <MenuCategory data={category} key={category.id} />
-        ))}
     </div>
   );
 };

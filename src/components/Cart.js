@@ -65,7 +65,7 @@ const Cart = () => {
             </div>}
           </>
         ) : (
-          <div className="text-center m-2">
+          <div className="text-center m-4">
             <h1 className="font-extrabold text-2xl m-2">
               No Items in the cart
             </h1>

@@ -70,11 +70,11 @@ const MenuItem = ({ data,restInfo }) => {
           )}
           <h1 className="text-sm text-gray-400 my-4">{data.description}</h1>
         </div>
-        <div>
+        <div className="ml-8 md:ml-0">
           {data.imageId && (
-            <div className="h-24">
+            <div className="md:h-20">
               <img
-                className="h-24 w-32 rounded-2xl border-gray-700 shadow-md"
+                className="h-20 w-20 rounded-2xl border-gray-700 shadow-md"
                 src={`https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_208,h_208,c_fit/${data.imageId}`}
                 alt="img"
               ></img>

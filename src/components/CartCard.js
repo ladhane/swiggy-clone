@@ -31,14 +31,14 @@ const CartCard = ({ data }) => {
         <h1 className=" mr-8 md:mr-16"> {(data.item.price|| data.item.defaultPrice) / 100}</h1>
           <div className="flex">
             <button
-              className="font-semibold text-sm border border-green-600 px-3 ml-2"
+              className="font-semibold text-sm border border-gray-300 px-3 ml-2 hover:bg-gray-300"
               onClick={() => reduceItemsToCart(data.item, 1)}
             >
               -
             </button>
-            <h1 className="px-3 border-y border-green-600">{data.quantity}</h1>
+            <h1 className="px-3 border-y border-gray-300 ">{data.quantity}</h1>
             <button
-              className="font-semibold text-sm px-3 border border-green-600"
+              className="font-semibold text-sm px-3 border border-gray-300 hover:bg-gray-300"
               onClick={() => addItemsToCart(data.item, 1)}
             >
               +
