@@ -1,4 +1,5 @@
 import { Outlet, createBrowserRouter } from "react-router-dom";
+import { lazy, Suspense } from "react";
 import Body from "./Body";
 import Error from "./Error";
 import Header from "./Header";
@@ -6,9 +7,10 @@ import RestaurantMenu from "./RestaurantMenu";
 import { Provider } from "react-redux";
 import store from "../utils/store";
 import Cart from "./Cart";
-import Search from "./Search";
-import Profile from "./Profile";
-import Help from "./Help";
+import MenuShimmer from "./Shimmer/MenuShimmer";
+const Profile = lazy(() => import("./Profile"));
+const Help = lazy(() => import("./Help"));
+const Search = lazy(() => import("./Search"));
 
 const AppLayout = () => {
   return (
@@ -34,19 +36,34 @@ export const router = createBrowserRouter([
         element: <RestaurantMenu />,
       },
       {
-        path:"/cart",
-        element: <Cart/>
+        path: "/cart",
+        element: <Cart />,
       },
       {
-        path:"/search",
-        element: <Search/>
-      },{
-        path:"/profile",
-        element: <Profile/>
-      },{
-        path:"/help",
-        element: <Help/>
-      }
+        path: "/search",
+        element: (
+          <Suspense fallback={<MenuShimmer numberOfCards={6} />}>
+            {" "}
+            <Search />
+          </Suspense>
+        ),
+      },
+      {
+        path: "/profile",
+        element: (
+          <Suspense fallback={<MenuShimmer numberOfCards={6} />}>
+            <Profile />
+          </Suspense>
+        ),
+      },
+      {
+        path: "/help",
+        element: (
+          <Suspense fallback={<MenuShimmer numberOfCards={6} />}>
+            <Help />
+          </Suspense>
+        ),
+      },
     ],
   },
 ]);

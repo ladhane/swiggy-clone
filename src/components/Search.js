@@ -39,6 +39,10 @@ const Search = () => {
       setSuggestedRestaurants();
     }
   };
+
+  const handleClick = (data)=>{
+      console.log(data,"handleClick");
+  }
   return (
     <div className=" grid grid-cols-6 justify-items-center">
       <div className="col-start-2 col-span-4 inline-flex mt-5">
@@ -55,7 +59,7 @@ const Search = () => {
       {suggestedRestaurants ? (
         <div className="col-start-2 col-span-4 md:w-[45rem]">
           {suggestedRestaurants.map((index) => (
-            <div className=" p-5 flex my-5 hover:bg-gray-200" key={index.text}>
+            <div className=" p-5 flex my-5 hover:bg-gray-200" onClick={()=>handleClick(index)} key={index.text}>
               <div>
                 <img
                   className="w-16 rounded-md"
