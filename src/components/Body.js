@@ -136,7 +136,7 @@ const Body = () => {
           allRestaurants.map((restaurant) => {
             return (
               <Link
-              className="flex md:w-1/3 lg:w-1/4 max-w-xs"
+              className="flex md:w-1/3 max-w-xs min-w-xs"
                 to={"/restaurant/" + restaurant.data.id}
                 key={restaurant?.data?.id}
               >
